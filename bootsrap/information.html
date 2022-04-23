@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="adminstyle.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>BlackBoard 2.0</title>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">&nbsp;&nbsp;BlackBoard 2.0</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="admin.html">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+
+
+      
+        <li>
+          <a href="information.html" class="active">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Information</span>
+          </a>
+        </li>
+
+
+
+        <li class="log_out">
+          <a href="main.html">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <span class="admin_name">Admin</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="title"><h1>About MCM</h1></div>
+          <div class="sales-details">
+            <ul class="details">
+                <p>Malayan Colleges Mindanao (MCM), a branch encompassing Mapua University’s
+                technological and academic excellence in Mindanao, has occupied a 3-hectare
+                land area along Gen. Douglas MacArthur Highway, beside Matina Town Square in Matina, Davao City.
+                The school officially began operations on July 2, 2018, and was followed by its official inauguration
+                ceremony on July 7, 2018, inaugurated by President Rodrigo Roa Duterte and graced with the presence
+                of Mayor Inday Sara Duterte; YGC Chairperson, Mrs. Helen Yuchengco-Dee; Mapua President, Dr. Reynaldo Vea;
+                CHED Chairman, Dr. J. Prospero “Popoy” E. De Vera III, and Malayan Colleges President and Chief Executive
+                Officer, Engr. Dodjie Maestrecampo.</p><br>
+                <p>MCM has built a community of competent and innovative leaders who possess attributes that make
+                them globally competitive and locally in-demand, distinguishing itself from the rest through
+                these important facets in its educational system:</p>
+                <ul>
+                    <li>&bull; <b>LEARNER-CENTERED OUTCOMES-BASED EDUCATION </b></li>
+                                <p>Transforming students to become globally competitive professionals is at the core of MCM’s vision. Through learner-centered, outcomes-based education (LC-OBE), MCM commits to ensuring that student learning is focused on attaining industry standards through clearly defined outcomes.  </p>
+                    <li>&bull; <b> EFFECTIVE LEARNING SPACES </b></li>
+                                <p> By fusing innovative physical learning spaces and digital learning environments, MCM supports students in achieving optimum cognitive performances students by providing access to WiFi campus-wide, cutting-edge resources, and a robust digital learning management system.</p>
+                    <li>&bull; <b> MAPÚA UNIVERSITY LEGACY</b></li>
+                                <p>  The academic excellence that Mapúa is known for is embedded in MCM’s DNA. MCM dedicates to bring to Mindanao the World-Class Mapúa Education that produces graduates that are highly preferred by industries here and abroad. </p>
+
+                </ul><br>
+                <p>Within MCM’s DNA is the academic excellence that Mapúa is known for,
+                and we are committed to bringing about the same level of excellence into our community here in Mindanao.</p>
+          </ul>
+          </div>
+          <div class="button">
+            <a href="programs.html">Programs Offered</a>
+          </div>
+        </div>
+
+
+        <div class="top-sales box">
+            <div class="title"><b>MAPUA LEGACY</b></div>
+            <ul class="top-sales-details"><br>
+                <p> Known as the Philippines’ seat of technological education excellence, Mapúa University is further extending its tradition of excellence in Mindanao through the establishment of Malayan Colleges Mindanao, occupying a 3-hectare land area along Gen. Douglas MacArthur Highway, beside Matina Town Square in Matina, Davao City. MCM is accepting Senior High School students and College students, offering an array of courses fit for those looking to develop skills in Engineering and Architecture, Arts and Sciences, Computing and Information Science, and Business. </p>
+            </ul>
+
+            <ul class="top-sales-details"><br>
+                <p> <h3> VISION</h3> </P>
+                <P> Malayan Colleges Mindanao shall be a school of global standards and of great significance locally and beyond.</P>
+            </ul>
+
+            <ul class="top-sales-details"><br>
+                <p> <h3> MISION</h3> </P>
+                <P> The institute shall engage in cutting edge and economically viable research, development and innovation that is relevant locally and beyond.</P>
+            </ul>
+
+            <ul class="top-sales-details"><br>
+                <p> <h3>MOTTO</h3> </P>
+                <img src= "C:\Users\NITRO 5\Desktop\bootsrap\pictures\MCM_logoMeans.png" width = "400  " height="200">
+            </ul>
+
+
+
+
+           </div>
+    </div>
+
+
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".sidebarBtn");
+  sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+  }else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+  }
+ </script>
+
+</body>
+</html>

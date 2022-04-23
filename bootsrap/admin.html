@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="adminstyle.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>MCM BlackBoard</title>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">&nbsp;&nbsp;BlackBoard 2.0</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+
+
+        <li>
+          <a href="information.html">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Information</span>
+          </a>
+        </li>
+        <li>
+
+
+        </li>
+        <li class="log_out">
+          <a href="main.html">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+
+      <
+    </nav>
+
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+
+            <div class="indicator">
+
+
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="right-side">
+
+
+            <div class="indicator">
+
+
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="right-side">
+
+
+            <div class="indicator">
+
+
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="right-side">
+
+
+            <div class="indicator">
+
+            </div>
+          </div>
+        </div>
+      </div>
+<!--Form Labels-->
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="title">Courses</div>
+          <div class="sales-details">
+            <table class="table">
+              <thead>
+                <tr class="details">
+            <th class="topic">Course ID</th>
+            <th class="topic">Course Name</th>
+            <th class="topic">Course Code</th>
+            <th class="topic">No. of Students</th>
+                </tr>
+              </thead>
+              <tbody id="tblbody"></tbody>
+            </table>
+
+          </div>
+
+        </div>
+
+        <div class="top-sales box">
+          <div class="title">Announcements</div>
+          <ul class="top-sales-details">
+            <li>
+              <img src= "C:\Users\NITRO 5\Desktop\bootsrap\pictures\holiday.png" width = "150" height="100">
+
+
+            </a>
+            <br><a href="#"> April 22, 2022 - Earth Day
+              <br> April 15, 2022 - Good Friday
+            </a>
+          </li>
+          </ul><br><br><br><br><br><br>
+          <div class="button">
+            <a href="#">Add Announcements</a>
+          </div>
+        </div>
+      </div><br>
+      <!--Form box-->
+      <form id="addForm" class="form">
+        <div class="sales-boxes">
+      <div class="recent-sales box">
+        <div class="sales-details">
+          <div class="form-group">
+              <ul class="details">
+              <li class="topic">Course Name:</li>
+              <li style="text-align: center;"><input type="text" name="txtCoursename" id="txtCoursename" class="form-control" value="" required=""></li>
+              </ul>
+          </div>
+          <div class="form-group">
+              <ul class="details">
+              <li class="topic">Course Code:</li>
+              <li style="text-align: center;"><input type="text" name="txtCoursecode" id="txtCoursecode" class="form-control" value="" required=""></li>
+              </ul>
+          </div>
+        <div class="form-group">
+              <ul class="details">
+              <li class="topic">No. of Students:</li>
+              <li style="text-align: center;"><input type="text" name="txtnumberStud" id="txtnumberStud" class="form-control" value="" required=""></li>
+              </ul>
+        </div>
+
+        </div>
+        <div class="button">
+          <button type="submit" id="btnadd" class="btn btn-primary save-btn">Add Course</button>
+         </div>
+
+      </div>
+    </div>
+      </form>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+   let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".sidebarBtn");
+  sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+  }else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+    function CreateUniqueCourseID()
+    {
+      const ID = Date.now();
+      return ID;
+    }
+
+  document.getElementById("btnadd").addEventListener("click", function(event)
+  {
+    event.preventDefault()
+    var CourseID = CreateUniqueCourseID();
+    var CourseName = document.getElementById("txtCoursename").value;
+    var CourseCode = document.getElementById("txtCoursecode").value;
+    var NumStudents = document.getElementById("txtnumberStud").value;
+    var btneditID = "btnedit" + CourseID;
+    var btndeleteID = "btndelete" + CourseID;
+    var tablerow = "<tr Id='" + CourseID + "' data-CourseID='" + CourseID + "' data-CourseName='" + CourseName + "' data-CourseCode='" + CourseCode + "'  data-NumStudents='" + NumStudents + "'>"
+      + "<td class='td-data'>" + CourseID + "</td>"
+      + "<td class='td-data'>" + CourseName + "</td>"
+      + "<td class='td-data'>" + CourseCode + "</td>"
+      + "<td class='td-data'>" + NumStudents + "</td>"
+      + "<td class='td-data'>" +
+      "<button id='" + btneditID + "' class='btn btn-info btn-xs btn-editcourse' onclick='showeditrow(" + CourseID + ")'><i class='fa fa-pencil' aria-hidden='true'></i>Edit</button>" +
+      "<button id='" + btndeleteID + "' class='btn btn-danger btn-xs btn-deleteCourse' onclick='deleteCourseRow(" + CourseID + ")'><i class='fa fa-trash' aria-hidden='true'>Delete</button>"
+        + "</td>"
+        + "</tr>";
+    document.getElementById('tblbody').innerHTML+= tablerow;
+    document.getElementById('txtCoursename').value = "";
+    document.getElementById('txtCoursecode').value = "";
+    document.getElementById('txtnumberStud').value = "";
+  });
+
+  function showeditrow(CourseID)
+  {
+    var CourseRow = document.getElementById(CourseID);
+
+    var data = CourseRow?.querySelectorAll(".td-data");
+
+    var CourseID = data[0].innerHTML;
+    var CourseName = data[1].innerHTML;
+    var CourseCode = data[2].innerHTML;
+    var NumStudents = data[3].innerHTML;
+    var btneditID = "btnedit" + CourseID;
+    data[0].innerHTML = '<input name="txtupdate_CourseID" class="edit__course--input" id="txtupdate_CourseID" value="' + CourseID + '"/>';
+    data[1].innerHTML = '<input name="txtupdate_CourseName" class="edit__course--input" id="txtupdate_CourseName" value="' + CourseName + '"/>';
+    data[2].innerHTML = '<input name="txtupdate_CourseCode" class="edit__course--input" id="txtupdate_CourseCode" value="' + CourseCode + '"/>';
+    data[3].innerHTML = '<input name="txtupdate_NumStudents" class="edit__course--input" id="txtupdate_NumStudents" value="' + NumStudents + '"/>';
+    data[4].innerHTML =
+    "<button class='btn btn-primary btn-xs btn-updateCourse' onclick='updateCourse(" + CourseID + ")'>" +
+    "<i class='fa fa-pencil' aria-hidden='true'></i>Update</button>"
+    + "<button class='btn btn-warning btn-xs btn-cancelupdate' onclick='cancelupdate(" + CourseID + ")'><i class='fa fa-times' aria-hidden='true'></i>Cancel</button>"
+    + "<button class='btn btn-danger btn-xs btn-deleteCourse' onclick='deleteCourseRow(" + CourseID + ")'>"
+    + "<i class='fa fa-trash' aria-hidden='true'></i>Delete</button>"
+  }
+
+  function cancelupdate(CourseID)
+  {
+    var btneditID = "btnedit" + CourseID;
+    var btndeleteID = "btndelete" + CourseID;
+
+    var CourseRow = document.getElementById(CourseID);
+    var data = CourseRow.querySelectorAll(".td-data");
+
+    var CourseName = CourseRow.getAttribute("data-CourseName");
+    var CourseCode = CourseRow.getAttribute("data-CourseCode");
+    var NumStudents = CourseRow.getAttribute("data-NumStudents");
+
+    data[0].innerHTML = CourseID;
+    data[1].innerHTML = CourseName;
+    data[2].innerHTML = CourseCode;
+    data[3].innerHTML = NumStudents;
+
+    var actionbtn = "<button id='" + btneditID + "' class='btn btn-info btn-xs btn-editcourse' onclick='showeditrow(" + CourseID +")'><i class='fa fa-pencil' aria-hidden='true'></i>Edit</button>" +
+                    "<button id='" + btndeleteID + "' class='btn btn-danger btn-xs btn-deleteCourse' onclick='deleteCourseRow(" + CourseID + ")'><i class='fa fa-trash' aria-hidden='true'>Delete</button>"
+    data[4].innerHTML = actionbtn;
+  }
+
+  function deleteCourseRow(CourseID)
+  {
+    document.getElementById(CourseID).remove();
+  }
+
+  function updateCourse(CourseID)
+  {
+    var btneditID = "btnedit" + CourseID;
+    var btndeleteID = "btndelete" + CourseID;
+
+    var CourseRow = document.getElementById(CourseID);
+    var data = CourseRow.querySelectorAll(".td-data");
+console.log(data)
+    var CourseName = data[1].querySelector("#txtupdate_CourseName").value;
+    var CourseCode = data[2].querySelector("#txtupdate_CourseCode").value;
+    var NumStudents = data[3].querySelector("#txtupdate_NumStudents").value;
+
+    data[0].innerHTML = CourseID;
+    data[1].innerHTML = CourseName;
+    data[2].innerHTML = CourseCode;
+    data[3].innerHTML = NumStudents;
+
+    var actionbtn = "<button id='" + btneditID + "' class='btn btn-info btn-xs btn-editcourse' onclick='showeditrow(" + CourseID + ")'><i class='fa fa-pencil' aria-hidden='true'></i>Edit</button>" +
+                    "<button id='" + btndeleteID + "' class='btn btn-danger btn-xs btn-deleteCourse' onclick='deleteCourseRow(" + CourseID + ")'><i class='fa fa-trash' aria-hidden='true'>Delete</button>"
+    data[4].innerHTML = actionbtn;
+
+  }
+
+
+
+
+ </script>
+
+</body>
+</html>

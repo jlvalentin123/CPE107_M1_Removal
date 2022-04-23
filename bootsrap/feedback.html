@@ -1,0 +1,166 @@
+<!DOCTYPE html>    
+<html>    
+<head>
+    <title>FeedBack Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">     
+    </head>    
+    <body>    
+    <div class="container">    
+      <form>    
+        <div class="row">    
+          <div class="col-25">    
+            <label for="fname">First Name</label>    
+          </div>    
+          <div class="col-75">    
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">    
+          </div>    
+        </div>    
+        <div class="row">    
+          <div class="col-25">    
+            <label for="lname">Last Name</label>    
+          </div>    
+          <div class="col-75">    
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">    
+          </div>    
+        </div>    
+        <div class="row">    
+            <div class="col-25">    
+              <label for="email">Mail ID</label>    
+            </div>    
+            <div class="col-75">    
+              <input type="text" id="email" name="mailid" placeholder="Your mail id..">    
+            </div>    
+          </div>    
+        <div class="row">    
+          <div class="col-25">    
+            <label for="country">Country</label>    
+          </div>    
+          <div class="col-75">    
+            <select id="country" name="country">    
+                <option value="none">Select Country</option>  
+              <option value="philippines">Philippines</option>    
+              <option value="australia">Australia</option>    
+              <option value="canada">Canada</option>    
+              <option value="usa">USA</option>    
+              <option value="russia">Russia</option>    
+              <option value="japan">Japan</option>    
+              <option value="india">India</option>    
+              <option value="china">China</option>    
+            </select>    
+          </div>    
+        </div>    
+        <div class="row">    
+          <div class="col-25">    
+            <label for="feed_back">Feed Back</label>    
+          </div>    
+          <div class="col-75">    
+            <textarea id="subject" name="subject" placeholder="Write something.." rows="10" cols="45"></textarea>    
+          </div>    
+        </div>
+        <dialog id="submit" class="row">
+            <form method="dialog">
+                <p>You have submitted your feedback</p>
+                <menu>
+                    <button id="confirm" value="default" class="confirmbtn">Confirm</button>
+                </menu>   
+            </form>   
+        </dialog>  
+        <button id="submitbtn">Submit</button>
+        <button type="button" value="Back" onclick="history.go(-1);">Back</button>
+      </form>    
+    </div> 
+
+    <script>
+        var SubmitButton = document.getElementById('submitbtn');
+        var Dialog = document.getElementById('submit');
+        var confirmBtn = document.getElementById('confirmbtn');
+
+// "Update details" button opens the <dialog> modally
+        SubmitButton.addEventListener('click', function onOpen() {
+        if (typeof Dialog.showModal === "function") {
+            Dialog.showModal();
+        } 
+        else {
+        alert("The <dialog> API is not supported by this browser");
+        }
+        });
+// "Confirm" button of form triggers "close" on dialog because of [method="dialog"]
+        Dialog.addEventListener('close', function onClose() 
+        {
+        window.location.href="student.html";
+        });
+    </script>  
+
+    <style>
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #0A2558;
+    background-image: linear-gradient(45deg,#0A2558,#87CEEB);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smooting: grayscale;
+}
+form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.24);
+    border-radius: 20px;
+}
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/*The inputs */
+input[type=text], input[type=password] {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+select {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    padding: 15px;
+    outline: 0;
+    background: #f2f2f2;
+    border: 0;
+    margin: 0 0 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Style for buttons*/
+button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #0A2558;
+    background-image: linear-gradient(45deg,#0A2558,#87CEEB);
+    color: white;
+    padding: 15px;
+    margin: 8px 0;
+    border: 0;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* button effect*/
+button:hover {
+    opacity: 0.8;
+}
+    </style>      
+    </body>       
+    </html>    

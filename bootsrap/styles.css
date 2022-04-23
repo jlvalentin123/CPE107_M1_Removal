@@ -1,0 +1,82 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #0A2558;
+    background-image: linear-gradient(45deg,#0A2558,#87CEEB);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smooting: grayscale;
+}
+form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.24);
+    border-radius: 20px;
+}
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/*The inputs */
+input[type=text], input[type=password] {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+select {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    padding: 15px;
+    outline: 0;
+    background: #f2f2f2;
+    border: 0;
+    margin: 0 0 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Style for buttons*/
+button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #0A2558;
+    background-image: linear-gradient(45deg,#0A2558,#87CEEB);
+    color: white;
+    padding: 15px;
+    margin: 8px 0;
+    border: 0;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* button effect*/
+button:hover {
+    opacity: 0.8;
+}
+
+/* Forgot password text*/
+span.psw {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 15px 0 0;
+}
+
+
+

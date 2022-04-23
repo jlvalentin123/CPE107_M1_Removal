@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="styles.css" rel="stylesheet">
+        <title>
+            MCM Dashboard
+        </title>
+        <script src ="userpass.js"></script>
+    </head>
+    <body>
+             <div class="container">
+                 <form  method="post" action="admin.html">
+                <h1>MCM<br>MCM BLACKBOARD</h1>
+                        <label><b>Username:</b></label>
+                        <input type="text" id="user" placeholder="Enter Username" name=""required>
+
+                        <label><b>Password:</b></label>
+                        <input type="password" id="pass"placeholder="Enter Password" name=""required>
+
+                       <label><b>User Type:</b></label>
+                       <select id ="usertype">
+                            <option>Select User</option>
+                            <option value="admin">Admin</option>
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                        </select>
+                        <br/>
+                        <button type="button" name="" class="loginbtn" onclick="validate()">Login</button>
+                        <button type="reset" value="reset" class="cancelbtn">Cancel</button>
+                        <span class="psw">Forgot <a href="#">Password?</a></span>
+
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
